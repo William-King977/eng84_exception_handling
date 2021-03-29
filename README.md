@@ -1,4 +1,5 @@
 # File and Exception Handling in Python
+## Exception handling
 We have `try`, `except`, `raise` and
 `finally` as our code blocks to handle the
 errors or exceptions.
@@ -23,6 +24,7 @@ finally:
     print("Your task is to read the data and display it as a list.")
 ```
 
+## File handling
 ### File handling modes
 | Mode |Description|
 | :----: |:---- |
@@ -33,3 +35,35 @@ finally:
 |'t' |This is the default mode. It opens in text mode.|
 |'b' |This opens in binary mode.
 |'+' |This will open a file for reading and writing (updating)|
+
+### File reading
+The contents of a file can be read by doing the following:
+```python
+# Prints line by line
+def read_file(file_name):
+    try:
+        file = open(file_name, "r")
+        print("Contents of the file:")
+        print(file.read())
+        file.close()
+    except FileNotFoundError as err:
+        print(f"The file named '{file_name}' does not exist - {err}.")
+
+read_file("orders.txt")
+```
+
+### File writing
+The following code writes a string into a file. The example
+also adds a new line.
+````python
+def write_to_file(file_name, item):
+    try:
+        file = open(file_name, "a")
+        file.write(item + "\n") # also adds a new line
+        file.close()
+        print(f"{item} written into {file_name} successfully.")
+    except FileNotFoundError as err:
+        print(f"The file named '{file_name}' does not exist - {err}.")
+
+write_to_file("orders.txt", "ice cream")
+````
