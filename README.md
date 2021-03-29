@@ -1,4 +1,4 @@
-# Exception Handling in Python
+# File and Exception Handling in Python
 We have `try`, `except`, `raise` and
 `finally` as our code blocks to handle the
 errors or exceptions.
@@ -22,3 +22,14 @@ except FileNotFoundError as err:
 finally:
     print("Your task is to read the data and display it as a list.")
 ```
+
+### File handling modes
+| Mode |Description|
+| :----: |:---- |
+|'r' |This is the default mode. It Opens file for reading. |
+|'w' |This Mode Opens file for writing. If file does not exist, it creates a new file. If file exists it truncates the file.|
+|'x' |Creates a new file. If file already exists, the operation fails.|
+|'a' |Open file in append mode. If file does not exist, it creates a new file.|
+|'t' |This is the default mode. It opens in text mode.|
+|'b' |This opens in binary mode.
+|'+' |This will open a file for reading and writing (updating)|
